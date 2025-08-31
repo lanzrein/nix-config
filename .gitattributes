@@ -1,0 +1,1 @@
+modules/home-manager/sensitive.nix filter=git-agecrypt diff=git-agecrypt

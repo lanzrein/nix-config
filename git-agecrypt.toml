@@ -1,0 +1,2 @@
+[config]
+"modules/home-manager/sensitive.nix" = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILPSAMI4e/+AfVqPCtHldwLMLG375oi/TI2iOxaH38A/ jlanzrein@Johans-MacBook-Pro.local"]
