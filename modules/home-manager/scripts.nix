@@ -5,7 +5,6 @@
   ...
 }: {
   home.packages = with pkgs; [
-
     (writeShellApplication {
       name = "dev-section";
       text = ''

@@ -22,6 +22,10 @@
       ./configuration.nix
       ./homebrew.nix
 
+      # system
+      ../modules/system/sketchybar
+      ../modules/system/aerospace
+
       # Home Manager
 
       home-manager.darwinModules.home-manager
@@ -55,7 +59,8 @@
             ++ [(import ../modules/home-manager/zed.nix)]
             ++ [(import ../modules/home-manager/ripgrep.nix)]
             ++ [(import ../modules/home-manager/sensitive.nix)]
-            ++ [(import ../modules/home-manager/jj.nix)];
+            ++ [(import ../modules/home-manager/jj.nix)]
+            ++ [(import ../modules/home-manager/sketchybar)];
         };
       }
     ];

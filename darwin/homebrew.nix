@@ -33,6 +33,7 @@
       # #"firefox"
       "font-cascadia-code"
       "font-fira-code"
+      "font-hack-nerd-font"
       "google-chrome"
       "iterm2"
       "jumpcut"

@@ -1,0 +1,112 @@
+#!/bin/bash
+export CONFIG_DIR=/Users/jlanzrein/.config/sketchybar
+source "$CONFIG_DIR/colors.sh"
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+
+##### global settings #####
+
+bar_params=(
+  position=top
+  sticky=on
+  padding_left=4
+  padding_right=4
+  color=$BAR_COLOR
+)
+
+if [[ "$(hostname)" == "Philipps-MacBook-Pro-2.local" ]]; then
+  bar_height=40
+else
+  bar_height=32
+fi
+
+sketchybar --bar "${bar_params[@]}" height=$bar_height
+
+default_params=(
+  icon.color=$TEXT_COLOR
+  icon.padding_left=8
+  icon.padding_right=3
+  label.color=$TEXT_COLOR
+  label.padding_left=3
+  label.padding_right=8
+  background.color=$ITEM_BG_COLOR
+  background.corner_radius=5
+  background.height=24
+  padding_left=2
+  padding_right=2
+)
+sketchybar --default "${default_params[@]}"
+
+sketchybar --add event aerospace_workspace_change
+
+for sid in $(aerospace list-workspaces --all); do
+    sketchybar --add item space.$sid left \
+        --subscribe space.$sid aerospace_workspace_change \
+        --set space.$sid \
+        background.color=$ACCENT_COLOR \
+        background.corner_radius=5 \
+        background.height=20 \
+        background.drawing=off \
+        label="$sid" \
+        click_script="aerospace workspace $sid" \
+        script="$CONFIG_DIR/plugins/aerospace.sh $sid"
+done
+
+set_params=(
+  icon.padding_left=0
+  icon.padding_right=0
+  label.padding_left=10
+  label.color=$TEXT_COLOR2
+  background.color=$ACCENT_COLOR
+  padding_left=8
+  script="$PLUGIN_DIR/front_app.sh"
+)
+sketchybar \
+  --add item front_app left \
+  --set front_app "${set_params[@]}" \
+  --subscribe front_app front_app_switched
+
+##### right items #####
+
+sketchybar \
+  --add item clock right \
+  --set clock \
+    label.padding_left=10 \
+    icon.padding_right=0 \
+    icon.padding_left=0 \
+    background.drawing=off \
+    update_freq=10 \
+    script="$PLUGIN_DIR/clock.sh"
+
+sketchybar \
+  --add item volume right \
+  --set volume script="$PLUGIN_DIR/volume.sh" \
+  --subscribe volume volume_change
+
+sketchybar \
+  --add item battery right \
+  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+  --subscribe battery system_woke power_source_change
+
+sketchybar \
+  --add item system_info right \
+  --set system_info \
+    update_freq=2 \
+    script="$PLUGIN_DIR/system_info.sh"
+
+
+sketchybar \
+  --add item proxy right \
+  --set proxy \
+    update_freq=10 \
+    script="$PLUGIN_DIR/proxy.sh" \
+    click_script="$PLUGIN_DIR/enable_proxy.fish"
+
+sketchybar \
+  --add item network right \
+  --set network \
+    update_freq=10 \
+    script="$PLUGIN_DIR/network.sh"
+##### Force all scripts to run the first time (never do this in a script) #####
+sketchybar --update
