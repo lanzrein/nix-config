@@ -22,6 +22,7 @@ else
 fi
 
 sketchybar --bar "${bar_params[@]}" height=$bar_height
+source "$CONFIG_DIR/popup.sh"
 
 default_params=(
   icon.color=$TEXT_COLOR
@@ -37,6 +38,7 @@ default_params=(
   padding_right=2
 )
 sketchybar --default "${default_params[@]}"
+
 
 sketchybar --add event aerospace_workspace_change
 
