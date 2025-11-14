@@ -17,10 +17,10 @@
       ];
 
       gaps = {
-        outer.left = 2;
-        outer.bottom = 2;
+        outer.left = 0;
+        outer.bottom =0;
         outer.top = 32;
-        outer.right = 2;
+        outer.right = 0;
       };
 
       mode.main.binding = {
@@ -30,7 +30,7 @@
         alt-l = "focus right";
         # See: https://nikitabobko.github.io/AeroSpace/commands#layout
         alt-slash = "layout tiles horizontal vertical";
-        alt-comma = "layout accordion horizontal vertical";
+        alt-comma = "layout tiles h_tiles"; # Thats what I want
         alt-f = "fullscreen";
         alt-shift-f = "layout floating tiling";
         # See: https://nikitabobko.github.io/AeroSpace/commands#move

@@ -3,11 +3,19 @@
   git_email,
   ...
 }: {
+  programs.difftastic = {
+    enable = true;
+    git.enable = true;
+  };
+
   programs.git = {
     enable = true;
 
-    userName = "${git_name}";
-    userEmail = "${git_email}";
+    settings = {
+      user.name = "${git_name}";
+      user.email = "${git_email}";
+      pull.rebase = "false";
+    };
 
     ignores = [
       "local"
@@ -26,13 +34,9 @@
       "!.vscode/extensions.json"
       "!.vscode/*.code-snippets"
     ];
-    extraConfig = {
-      pull.rebase = "false";
-    };
 
     lfs = {enable = true;};
 
-    difftastic = {enable = true;};
 
     includes = [
       {
