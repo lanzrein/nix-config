@@ -19,4 +19,8 @@
   sops.templates.proxy_address_vpn.content = ''${config.sops.placeholder.proxy_address_vpn}'';
   sops.secrets.proxy_pac_vpn = {};
   sops.templates.proxy_pac_vpn.content = ''${config.sops.placeholder.proxy_pac_vpn}'';
+  sops.secrets.jira_token = {};
+  sops.templates.jira_token.content = ''${config.sops.placeholder.jira_token}'';
+  sops.secrets.wiki_token = {};
+  sops.templates.wiki_token.content = ''${config.sops.placeholder.wiki_token}'';
 }

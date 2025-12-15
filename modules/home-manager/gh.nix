@@ -35,5 +35,7 @@
     GH_TOKEN = "$(cat ${config.sops.templates.github_token.path})";
     GITLAB_TOKEN = "$(cat ${config.sops.templates.gitlab_token.path})";
     GITLAB_BASE_URL = "$(cat ${config.sops.templates.gitlab_base_url.path})";
+    JIRA_TOKEN = "$(cat ${config.sops.templates.jira_token.path})";
+    WIKI_TOKEN = "$(cat ${config.sops.templates.wiki_token.path})";
   };
 }

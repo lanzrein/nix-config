@@ -24,7 +24,7 @@
       fix = {
         tools = {
           python = {
-            command = ["python" "-m black"];
+            command = ["python" "-m ruff"];
             patterns = ["**/*.py"];
           };
         };
@@ -39,7 +39,7 @@
 
   programs.fish = {
     shellAbbrs = {
-      jjla = "jj log -r '@ | ancestors(remote_bookmarks()::, 2) | trunk()::'";
+      jjla = "jj log -r '@ | ancestors(remote_bookmarks()::, 2) | trunk()::' -n10";
       jjb = "jj log -r 'heads(all())'";
       jjm = "jj log -r '@ | trunk()::'";
       jjpr = "jj git push -r @";

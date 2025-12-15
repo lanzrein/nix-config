@@ -45,6 +45,9 @@
       "visual-studio-code"
       "vlc"
       "wireshark-app"
+      "kiro" # does not work somehow in packages..
+      "kiro-cli" # kiro stuff and nix pkgs is not good
+      "ghostty" # not in packages for darwin x86
     ];
   };
 }
