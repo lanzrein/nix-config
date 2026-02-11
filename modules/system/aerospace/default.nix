@@ -6,6 +6,18 @@
   services.aerospace = {
     enable = true;
     settings = {
+      workspace-to-monitor-force-assignment = {
+       "1" = "main";
+       "2" = "main"; 
+       "3" = "main";
+       "4" = ["secondary" "main"];
+       "5" = ["secondary" "main"];
+       "6" = ["secondary" "main"];
+       "7" = ["secondary" "main"];
+       "8" = ["secondary" "main"];
+       "9" = ["secondary" "main"];
+       "10" = ["secondary" "main"];
+      };
       after-startup-command = [
         "exec-and-forget sketchybar"
       ];
@@ -18,7 +30,7 @@
 
       gaps = {
         outer.left = 0;
-        outer.bottom =0;
+        outer.bottom = 0;
         outer.top = 32;
         outer.right = 0;
       };

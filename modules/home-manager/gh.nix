@@ -37,5 +37,6 @@
     GITLAB_BASE_URL = "$(cat ${config.sops.templates.gitlab_base_url.path})";
     JIRA_TOKEN = "$(cat ${config.sops.templates.jira_token.path})";
     WIKI_TOKEN = "$(cat ${config.sops.templates.wiki_token.path})";
+    LITELLM_TOKEN = "$(cat ${config.sops.templates.litellm_token.path})";
   };
 }

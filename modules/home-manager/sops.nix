@@ -23,4 +23,6 @@
   sops.templates.jira_token.content = ''${config.sops.placeholder.jira_token}'';
   sops.secrets.wiki_token = {};
   sops.templates.wiki_token.content = ''${config.sops.placeholder.wiki_token}'';
+  sops.secrets.litellm_token = {};
+  sops.templates.litellm_token.content = ''${config.sops.placeholder.litellm_token}'';
 }

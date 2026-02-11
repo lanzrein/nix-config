@@ -60,6 +60,7 @@
             ++ [(import ../modules/home-manager/ripgrep.nix)]
             ++ [(import ../modules/home-manager/sensitive.nix)]
             ++ [(import ../modules/home-manager/jj.nix)]
+            ++ [(import ../modules/home-manager/claude.nix)]
             ++ [(import ../modules/home-manager/sketchybar)];
         };
       }
