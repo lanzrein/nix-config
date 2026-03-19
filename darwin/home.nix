@@ -46,8 +46,9 @@
       kubent
 
       # Not in homemanager
-      jetbrains.pycharm-professional
-      jetbrains.idea-ultimate
+      jetbrains.pycharm
+      jetbrains.idea
+
     ];
     username = "${user}";
     homeDirectory = "/Users/${user}";
@@ -64,6 +65,8 @@
     btop.enable = true;
     home-manager.enable = true;
     awscli.enable = true;
+    npm.enable = true;
+    uv.enable = true;
   };
 
   home.sessionPath = [

@@ -18,7 +18,6 @@
     };
     extensions = with pkgs; [
       gh-poi
-      gh-copilot
       gh-f
       gh-gei
     ];

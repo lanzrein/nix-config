@@ -25,4 +25,14 @@
   sops.templates.wiki_token.content = ''${config.sops.placeholder.wiki_token}'';
   sops.secrets.litellm_token = {};
   sops.templates.litellm_token.content = ''${config.sops.placeholder.litellm_token}'';
+  sops.secrets.CONTEXT_SEVEN_API = {};
+  sops.templates.CONTEXT_SEVEN_API.content = ''${config.sops.placeholder.CONTEXT_SEVEN_API}'';
+  sops.secrets.CONFLUENCE_PERSONAL_TOKEN = {};
+  sops.templates.CONFLUENCE_PERSONAL_TOKEN.content = ''${config.sops.placeholder.CONFLUENCE_PERSONAL_TOKEN}'';
+  sops.secrets.CONFLUENCE_URL = {};
+  sops.templates.CONFLUENCE_URL.content = ''${config.sops.placeholder.CONFLUENCE_URL}'';
+  sops.secrets.JIRA_URL = {};
+  sops.templates.JIRA_URL.content = ''${config.sops.placeholder.JIRA_URL}'';
+  sops.secrets.JIRA_PERSONAL_TOKEN = {};
+  sops.templates.JIRA_PERSONAL_TOKEN.content = ''${config.sops.placeholder.JIRA_PERSONAL_TOKEN}'';
 }

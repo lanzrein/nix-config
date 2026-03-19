@@ -9,6 +9,7 @@
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
       export GPG_TTY=$(tty)
+      eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
     plugins = [
       {
@@ -51,6 +52,8 @@
       exargs = "export \$(cat .env | xargs)";
       proxy_aws = "HTTPS_PROXY=$(cat ${config.sops.templates.proxy_address_vpn.path}) aws";
       proxy_k9s = "HTTPS_PROXY=$(cat ${config.sops.templates.proxy_address_vpn.path}) k9s";
+      docker = "podman";
+      tfmodver_co = "tfmodver checkout --path ~/git/gitlab --host $(cat ${config.sops.templates.gitlab_host.path}) -k --ignore \"^pam/.*?/apps/\" --sub foundation/foundation --sub operations/operations -c";
     };
 
     functions = {
@@ -70,6 +73,17 @@
       gitignore = "curl -sL https://www.gitignore.io/api/$argv";
       loadenv = {
         body = lib.readFile ./data/functions/loadenv.fish;
+      };
+
+      jjinit = {
+        body = ''
+          jj describe -m "chore: initial commit"
+          jj bookmark c main
+          jj bookmark t main --remote=origin
+          jj git push -r @
+          jj bookmark f main 
+        '';
+        description = "Initialize git repo with initial empty commit";
       };
     };
   };

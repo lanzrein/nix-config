@@ -25,8 +25,8 @@
   }: let
     user = "jlanzrein";
     user_uid = 503;
-    system = "x86_64-darwin";
-    hostname = "Johans-MacBook-Pro";
+    system = "aarch64-darwin";
+    hostname = "MacBook-Pro-de-Johan";
     git_name = "Johan Lanzrein";
     git_email = "jlanzrein@pictet.com";
   in {

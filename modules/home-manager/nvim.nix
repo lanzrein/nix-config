@@ -20,7 +20,7 @@
         \ coc#refresh()
       inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"'';
     plugins = with pkgs.vimPlugins; [
-      fugitive
+      vim-fugitive
       molokai
       vim-airline-themes
       vim-airline

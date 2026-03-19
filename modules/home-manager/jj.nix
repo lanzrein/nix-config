@@ -47,6 +47,7 @@
       jjf = "jj git fetch";
       jjrb = "jj rebase";
       jjrbm = "jj rebase -d main@origin";
+      jjlm = "jj log -r 'trunk()::@'";
     };
   };
 }

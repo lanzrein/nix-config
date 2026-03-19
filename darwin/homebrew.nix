@@ -11,7 +11,6 @@
     global = {
       autoUpdate = true;
       brewfile = true;
-      lockfiles = true;
     };
 
     # https://github.com/mas-cli/mas
@@ -25,12 +24,14 @@
 
     # cellar apps
     # brews = [ "mas" "bitwarden-cli" ];
-
+    brews = [
+      "podman"
+    ];
     # cask apps
     casks = [
       "drawio"
-      "docker-desktop"
-      # #"firefox"
+      "firefox"
+      "podman-desktop"
       "font-cascadia-code"
       "font-fira-code"
       "font-hack-nerd-font"
@@ -46,8 +47,8 @@
       "vlc"
       "wireshark-app"
       "kiro" # does not work somehow in packages..
-      "kiro-cli" # kiro stuff and nix pkgs is not good
       "ghostty" # not in packages for darwin x86
+      "copilot-cli"
     ];
   };
 }

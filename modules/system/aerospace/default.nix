@@ -31,7 +31,7 @@
       gaps = {
         outer.left = 0;
         outer.bottom = 0;
-        outer.top = 32;
+        outer.top = 0;
         outer.right = 0;
       };
 
